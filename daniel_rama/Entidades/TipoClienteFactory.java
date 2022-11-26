@@ -1,0 +1,21 @@
+package com.patterns.daniel.Entidades;
+
+import com.patterns.daniel.enums.TipoCliente;
+
+public class TipoClienteFactory {
+
+    public TipoClienteFactory() {
+    }
+
+    public TipoCliente getTipoCliente(Cliente oCliente) {
+        if (oCliente.getEventos() >= 15 && oCliente.getEventos() < 20) {
+            return TipoCliente.PLATA;
+        } else if (oCliente.getEventos() > 19 && oCliente.getEventos() < 30) {
+            return TipoCliente.ORO;
+        } else if (oCliente.getEventos() > 29) {
+            return TipoCliente.PLATINO;
+        } else {
+            return TipoCliente.REGULAR;
+        }
+    }
+}
